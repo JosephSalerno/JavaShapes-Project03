@@ -47,6 +47,34 @@ public class Rectangle {
 	
 	public int compareTo(Rectangle other) {
 		return 0;
+		
 	}
+	
+	public int getRectWidth() {
+		return rectWidth;
+		
+	}
+	
+	public int getRectHeight() {
+		return rectHeight;
+		
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	
+	
+	
 
 }
+
