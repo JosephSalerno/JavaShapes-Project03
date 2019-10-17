@@ -26,6 +26,8 @@ public class Triangle{
 	private int x;
 	private int y;
 	boolean filled;
+	private int[] xCoords = {};
+	private int[] yCoords = {};
 
 	
 	
@@ -157,22 +159,31 @@ public class Triangle{
 	}
 	
 	/**
-	 * Returns an int[] of the coordinates of the triangle
-	 * @return an integer array with each coordinate (in groups of two) following one another
+	 * Returns an int[] of the x-coordinates of the triangle
+	 * @return an integer array with x-coordinates
 	 */
-	public int[] getCoordinates()
+	public int[] getXCoordinates()
 	{
-		int[] coords = new int[6];
+		int[] coords = new int[3];
 		coords[0] = (base/2)+x;
-		coords[1] = y;
-		coords[2] = (base+x);
-		coords[3] = (height+y);
-		coords[4] = x;
-		coords[5] = (height+y);
+		coords[1] = (base+x);
+		coords[2] = x;
 		return coords;
 		
 	}
 	
+	/**
+	 * Returns an int[] of the y-coordinates of the triangle
+	 * @return an integer array with each y-coordinate 
+	 */
+	public int[] getYCoordinates()
+	{
+		int[] coords = new int[3];
+		coords[0] = y;
+		coords[1] = coords[2] = (height+y);
+		return coords;
+		
+	}
 	/**
 	 * Returns a double[] of the three outer sides of the triangle
 	 * @return a double array with all 3 sides of the triangle
@@ -211,7 +222,7 @@ public class Triangle{
 	      str += "Height: " + height + "\n";
 	      str += "Coordinates: ";
 	      
-	      int[] coords = getCoordinates();
+	      int[] coords = getXCoordinates();
 	      for(int x = 0; x<coords.length; x+=2)
 	      {
 	    	  str+= "(" + coords[x] + "," + coords[x+1] + "), ";
@@ -222,9 +233,10 @@ public class Triangle{
 	      str += "Filled: " + filled + "\n\n";
 	      
 	      double[] sides = getSides();
-	      str += "Side 1: " + sides[0] + "\n";
-	      str += "Side 2: " + sides[1] + "\n";
-	      str += "Side 3: " + sides[2] + "\n";
+	      for(int x = 0; x<sides.length; x++)
+	      {
+	    	  str += "Side " + (x + 1) + ": " + sides[x] + "\n";
+	      }
 	      str += "Perimeter: " + getPerimeter() + "\n";
 	      str += "\n==========";
 	      
@@ -237,7 +249,15 @@ public class Triangle{
 	 * @return integer 0 if equal, -1 if less than, 1 if greater than other Triangle
 	 */
 	public int compareTo(Triangle other) {
-		   return 2;
+		  double tArea = 0.5 * (base * height);
+		  double tOtherArea = 0.5 * (other.getBase() * other.getHeight());
+		  if (tArea == tOtherArea) {
+		         return 0;
+		      } else if (tArea < tOtherArea) {
+		         return -1;
+		      } else {
+		         return 1;
+		      }
 		      }
 	   
 	   
