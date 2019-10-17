@@ -9,7 +9,7 @@
  * Project: 3
  */
 
-public class Triangle{
+public class Triangle extends StraightLineShape{
 	
 	
 	//class variables
@@ -26,8 +26,8 @@ public class Triangle{
 	private int x;
 	private int y;
 	boolean filled;
-	private int[] xCoords = {};
-	private int[] yCoords = {};
+	private int[] xCoords = new int[3];
+	private int[] yCoords = new int[3];
 
 	
 	
@@ -41,8 +41,9 @@ public class Triangle{
 	 * @param filled - boolean representing if the shape is filled or not
 	 *
 	 */
-	public Triangle(int base, int height, String color, int x, int y, boolean filled)
+	public Triangle (int base, int height, String color, int x, int y, boolean filled)
 	{
+		super("Triangle");
 		this.base = base;
 		this.height = height;
 	    this.color = color;
@@ -148,6 +149,15 @@ public class Triangle{
 	{
 		this.y = newY;
 	}
+
+	/**
+	 * Sets the boolean filled to true or false
+	 * @param newFill - new filled boolean of the Square
+	 */
+	public void setFill(boolean newFill)
+	{
+		this.filled = newFill;
+	}
 	
 	/**
 	 * Checks if the shape is filled
@@ -164,11 +174,10 @@ public class Triangle{
 	 */
 	public int[] getXCoordinates()
 	{
-		int[] coords = new int[3];
-		coords[0] = (base/2)+x;
-		coords[1] = (base+x);
-		coords[2] = x;
-		return coords;
+		xCoords[0] = (base/2)+x;
+		xCoords[1] = (base+x);
+		xCoords[2] = x;
+		return xCoords;
 		
 	}
 	
@@ -178,12 +187,11 @@ public class Triangle{
 	 */
 	public int[] getYCoordinates()
 	{
-		int[] coords = new int[3];
-		coords[0] = y;
-		coords[1] = coords[2] = (height+y);
-		return coords;
-		
+		yCoords[0] = y;
+		yCoords[1] = yCoords[2] = (height+y);
+		return yCoords;
 	}
+
 	/**
 	 * Returns a double[] of the three outer sides of the triangle
 	 * @return a double array with all 3 sides of the triangle
@@ -222,10 +230,11 @@ public class Triangle{
 	      str += "Height: " + height + "\n";
 	      str += "Coordinates: ";
 	      
-	      int[] coords = getXCoordinates();
-	      for(int x = 0; x<coords.length; x+=2)
+		  int[] xCoords = getXCoordinates();
+		  int[] yCoords = getYCoordinates();
+	      for(int index = 0; index<xCoords.length; ++index)
 	      {
-	    	  str+= "(" + coords[x] + "," + coords[x+1] + "), ";
+	    	  str+= "(" + xCoords[index] + "," + yCoords[index] + "), ";
 	      }
 	      
 	      str += "\nPosition: " + x + "," + y + "\n";
@@ -238,7 +247,7 @@ public class Triangle{
 	    	  str += "Side " + (x + 1) + ": " + sides[x] + "\n";
 	      }
 	      str += "Perimeter: " + getPerimeter() + "\n";
-	      str += "\n==========";
+	      str += "\n==========\n";
 	      
 	      return str;
 	   }

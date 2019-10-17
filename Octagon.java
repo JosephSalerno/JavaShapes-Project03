@@ -1,4 +1,4 @@
 
-public class Octagon extends Shape {
+public class Octagon{
 
 }

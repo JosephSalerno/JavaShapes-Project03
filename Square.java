@@ -9,7 +9,7 @@
  * Project: 3
  */
 
-public class Square{
+public class Square extends StraightLineShape{
 	
 	
 	//class variables
@@ -24,7 +24,8 @@ public class Square{
 	private int x;
 	private int y;
 	boolean filled;
-
+	private int[] xCoords = new int[4];
+	private int[] yCoords = new int[4];
 	
 	
 	/**
@@ -38,11 +39,23 @@ public class Square{
 	 */
 	public Square(int width, String color, int x, int y, boolean filled)
 	{
+		super("Square");
+		
 		this.width = width;
 	    this.color = color;
 	    this.x = x;
 	    this.y = y;
-	    this.filled = filled;
+		this.filled = filled;
+
+		xCoords[0] = x;
+		xCoords[1] = x + width;
+		xCoords[2] = x + width;
+		xCoords[3] = x;
+		
+		yCoords[0] = y;
+		yCoords[1] = y;
+		yCoords[2] = y + width;
+		yCoords[3] = y + width;
 	}
 	
 	/**
@@ -50,7 +63,16 @@ public class Square{
 	 * and just the DEFAULT values given by the program.
 	 */
 	public Square() {
-		this(DEFAULT_WIDTH, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION, DEFAULT_FILL );
+		this(DEFAULT_WIDTH, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION, DEFAULT_FILL);
+		xCoords[0] = DEFAULT_POSITION;
+		xCoords[1] = DEFAULT_POSITION + DEFAULT_WIDTH;
+		xCoords[2] = DEFAULT_POSITION + DEFAULT_WIDTH;
+		xCoords[3] = DEFAULT_POSITION;
+		
+		yCoords[0] = DEFAULT_POSITION;
+		yCoords[1] = DEFAULT_POSITION;
+		yCoords[2] = DEFAULT_POSITION + DEFAULT_WIDTH;
+		yCoords[3] = DEFAULT_POSITION + DEFAULT_WIDTH;
 	   }
 	
 	/**
@@ -124,6 +146,15 @@ public class Square{
 	{
 		this.y = newY;
 	}
+
+	/**
+	 * Sets the boolean filled to true or false
+	 * @param newFill - new filled boolean of the Square
+	 */
+	public void setFill(boolean newFill)
+	{
+		this.filled = newFill;
+	}
 	
 	/**
 	 * Checks if the shape is filled
@@ -135,24 +166,23 @@ public class Square{
 	}
 	
 	/**
-	 * Returns an int[] of the coordinates of the Square
-	 * @return an integer array with each coordinate (in groups of two) following one another
+	 * Returns an int[] of the x coordinates of the Square
+	 * @return an integer array with each x coordinate following one another
 	 */
-	public int[] getCoordinates()
+	public int[] getXCoordinates()
 	{
-		int[] coords = new int[8];
-		coords[0] = x;
-		coords[1] = y;
-		coords[2] = x+width;
-		coords[3] = y;
-		coords[4] = x + width;
-		coords[5] = y+width;
-		coords[6] = x;
-		coords[7] = y+width; 
-		return coords;
-		
+		return xCoords;
 	}
 	
+	/**
+	 * Returns an int[] of the y coordinates of the Square
+	 * @return an integer array with each y coordinate following one another
+	 */
+	public int[] getYCoordinates()
+	{
+		return yCoords;
+	}
+
 	/**
 	 * Returns a double[] with the sides of the Square
 	 * @return a double array with all 4 sides of the Square
@@ -182,11 +212,10 @@ public class Square{
 	      str += "Width: " + width + "\n";
 	      str += "Coordinates: ";
 	      
-//	      int[] coords = getCoordinates();
-//	      for(int x = 0; x<coords.length; x+=2)
-//	      {
-//	    	  str+= "(" + coords[x] + "," + coords[x+1] + "), ";
-//	      }
+	      for(int index = 0; index<xCoords.length; ++index)
+	      {
+	    	str+= "(" + xCoords[index] + "," + yCoords[index] + "), ";
+	      }
 	      
 	      str += "\nPosition: " + x + "," + y + "\n";
 	      str += "Color: " + color + "\n";
@@ -199,7 +228,7 @@ public class Square{
 	      }
 	      
 	      str += "Perimeter: " + getPerimeter() + "\n";
-	      str += "\n==========";
+	      str += "==========\n\n";
 	      
 	      return str;
 	   }

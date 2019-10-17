@@ -8,7 +8,7 @@
  * Project: 3
  */
 
-public class Circle{
+public class Circle extends RoundShape{
 	
 	
 	//class variable
@@ -36,6 +36,8 @@ public class Circle{
 	 */
 	public Circle(int radius, String color, int x, int y, boolean filled)
 	{
+		super("Circle");
+		
 		this.radius = radius;
 	    this.color = color;
 	    this.x = x;
@@ -121,6 +123,15 @@ public class Circle{
 	{
 		this.y = newY;
 	}
+
+	/**
+	 * Sets the boolean filled to true or false
+	 * @param newFill - new filled boolean of the Square
+	 */
+	public void setFill(boolean newFill)
+	{
+		this.filled = newFill;
+	}
 	
 	/**
 	 * Checks if the shape is filled
@@ -145,13 +156,13 @@ public class Circle{
 	 * @return a string containing the circle string representation
 	 */
 	public String toString() {
-	      String str = "===Circle===";
+	      String str = "===Circle===" + "\n";
 	      str += "Radius: " + radius + "\n";
 	      str += "Position: " + x + "," + y + "\n";
 	      str += "Color: " + color + "\n";
 	      str += "Filled: " + filled + "\n";
 	      str += "Circumference: " + getCircumference() + "\n";
-	      str += "\n============";
+	      str += "============\n";
 	      
 	      return str;
 	   }
