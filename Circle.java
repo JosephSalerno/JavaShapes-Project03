@@ -115,7 +115,7 @@ public class Circle{
 	
 	/**
 	 * Sets the y position to a new value
-	 * @param newY - new y position of the Square
+	 * @param newY - new y position of the Circle
 	 */
 	public void setY(int newY)
 	{
@@ -132,7 +132,7 @@ public class Circle{
 	}
 	
 	/**
-	 * Returns the circumference of the circle
+	 * Returns the circumference of the Circle
 	 * @return double containing the circumference
 	 */
 	public double getCircumference()
@@ -142,7 +142,7 @@ public class Circle{
 	
 	/**
 	 * Returns a string representation of the Circle
-	 * @return a string containing the circle string representation
+	 * @return a string containing the Circle string representation
 	 */
 	public String toString() {
 	      String str = "===Circle===";
