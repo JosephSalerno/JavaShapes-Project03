@@ -11,7 +11,7 @@
 public class Circle{
 	
 	
-	//class variable
+	//class variables
 	public static final String DEFAULT_COLOR = "Black";
 	public static final int DEFAULT_POSITION = 0;
 	public static final int DEFAULT_RADIUS = 1;
