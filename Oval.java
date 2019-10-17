@@ -7,7 +7,7 @@
  * Class: Oval.java
  * Project: 3
  */
-public class Oval{
+public class Oval extends RoundShape{
 	
 	
 	//class variables
@@ -15,6 +15,7 @@ public class Oval{
 	public static final int DEFAULT_POSITION = 0;
 	public static final int DEFAULT_RADIUS_W = 1;
 	public static final int DEFAULT_RADIUS_H = 2;
+	public static final boolean DEFAULT_FILL = false;
 	
 	//instance variables
 	private int radiusWidth;
@@ -34,20 +35,22 @@ public class Oval{
 	 * @param filled - boolean representing if the shape is filled or not
 	 *
 	 */
-	public Oval(int radiusWidth, int radiusHeight, String color, int x, int y)
+	public Oval(int radiusWidth, int radiusHeight, String color, int x, int y, boolean filled)
 	{
+		super("Oval");
 		this.radiusWidth = radiusWidth;
 		this.radiusHeight = radiusHeight;
 	    this.color = color;
 	    this.x = x;
-	    this.y = y;
+		this.y = y;
+		this.filled = filled;
 	}
 	
 	/**
 	 * Constructor to create a Oval no givens, only DEFAULTS
 	 */
 	public Oval() {
-		this(DEFAULT_RADIUS_W, DEFAULT_RADIUS_H, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION);
+		this(DEFAULT_RADIUS_W, DEFAULT_RADIUS_H, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION, DEFAULT_FILL);
 	   }
 	
 	/**
@@ -148,19 +151,28 @@ public class Oval{
 	{
 		return filled;
 	}
+
+	/**
+	 * Sets the boolean filled to true or false
+	 * @param newFill - new filled boolean of the Square
+	 */
+	public void setFill(boolean newFill)
+	{
+		this.filled = newFill;
+	}
 	
 	/**
 	 * Returns the string representation of the Oval
 	 * @return the Oval's string representation
 	 */
 	public String toString() {
-	      String str = "===Oval===";
+	      String str = "===Oval===\n";
 	      str += "Radius (Width): " + radiusWidth + "\n";
 	      str += "Radius (Height): " + radiusHeight + "\n";
 	      str += "Position: " + x + "," + y + "\n";
 	      str += "Color: " + color + "\n";
 	      str += "Filled: " + filled;
-	      str += "\n==========";
+	      str += "\n==========\n";
 	      
 	      return str;
 	   }
