@@ -164,12 +164,12 @@ public class Oval extends RoundShape{
 	 * @return the Oval's string representation
 	 */
 	public String toString() {
-	      String str = "===Oval===";
+	      String str = "===Oval===\n";
 	      str += "Radius (Width): " + radiusWidth + "\n";
 	      str += "Radius (Height): " + radiusHeight + "\n";
 	      str += "Position: " + x + "," + y + "\n";
 	      str += "Color: " + color + "\n";
-	      str += "Filled: " + filled;
+	      str += "Filled: " + filled + "\n;
 	      str += "\n==========";
 	      
 	      return str;
