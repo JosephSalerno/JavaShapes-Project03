@@ -9,5 +9,16 @@
  */
 
 public abstract class RoundShape extends AllShapes{
+  
+  
 
+  /**
+	 * Returns the integer width of the Oval
+	 * @return width of the Oval
+	 */
+	public int getRadius()
+	{
+		return radius;
+	}
+  
   }
