@@ -11,6 +11,9 @@
 
 public abstract class StraightLineShape extends AllShapes{
 
+	protected int[] xCoords = new int[3];
+	protected int[] yCoords = new int[3];
+
     /**
 	 * Returns the perimeter of the Shape
 	 * @return the perimeter as a double
@@ -21,11 +24,29 @@ public abstract class StraightLineShape extends AllShapes{
 	 * Returns the int[] of xCoords of the Shape
 	 * @return integer array containing the x coordinates
 	 */
-    public abstract int[] getXCoordinates();
+	public int[] getXCoordinates()
+	{
+		return xCoords;
+	}
 
     /**
 	 * Returns the int[] of yCoords of the Shape
 	 * @return integer array containing the y coordinates
 	 */
-    public abstract int[] getYCoordinates();
+	public int[] getYCoordinates()
+	{
+		return yCoords;
+	}
+	
+	/**
+	 * Returns a double[] with the sides of the shape
+	 * @return a double array with all sides of the shape
+	 */
+	public abstract double[] getSides();
+
+	/**
+	 * Sets the coordinates in the arrays xCoords and yCoords
+	 */
+	public abstract void calculateCoords();
+
   }

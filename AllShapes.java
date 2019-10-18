@@ -9,57 +9,84 @@
  */
 
 public abstract class AllShapes {
-    
-    /**
-	 * Returns the color of the Shape
-	 * @return String of the color of the Shape
-	 */
-    public abstract String getColor();
+	
+	protected int x;
+	protected int y;
+	protected String color;
+	protected boolean filled;
 
     /**
-	 * Returns the x position of the Shape
-	 * @return x position of the Shape
+	 * Returns the string color of the Circle
+	 * @return color of the Circle
 	 */
-    public abstract int getX();
+	public String getColor()
+	{
+		return color;
+	}
 
     /**
-	 * Returns the y position of the Shape
-	 * @return y position of the Shape
+	 * Returns the x position of the Oval
+	 * @return x position of the Oval
 	 */
-    public abstract int getY();
+	public int getX()
+	{
+		return x;
+	}
+	
+	/**
+	 * Returns the y position of the Oval
+	 * @return y position of the Oval
+	 */
+	public int getY()
+	{
+		return y;
+	}
 
-    /**
-	 * Sets the x position to a new value, update coords
+	/**
+	 * Sets the Circle color to a new color
+	 * @param newColor - new color string of the Circle
+	 */
+	public void setColor(String newColor)
+	{
+		this.color = newColor;
+	}
+	
+	/**
+	 * Checks if the shape is filled
+	 * @return a boolean relating to whether or not the shape is filled
+	 */
+	public boolean isFilled()
+	{
+		return filled;
+	}
+	
+	/**
+	 * Sets filled to a new value
+	 * @param newFill - new boolean value for filled
+	 */
+	public void setFill(boolean newFill)
+	{
+		this.filled = newFill;
+	}
+
+	/*
+    * Method to test the equality of two shapes.
+    * @param Object other - a different shape object 
+    * @return true/false depending on equality of shape objects
+    */   
+	public abstract boolean equalsTo(Object other);
+	
+	/**
+	 * Sets x position of the Shape to a new one
 	 * @param newX - new x position of the Shape
 	 */
-    public abstract void setX(int newX);
+	public abstract void setX(int newX);
 
-    /**
-	 * Sets the y position to a new value, update coords
+	/**
+	 * Sets y of the Shape to a new one
 	 * @param newY - new y position of the Shape
 	 */
-    public abstract void setY(int newY);
-
-    /**
-	 * Sets the Rectangle color to a new color
-	 * @param newColor - new color string of the Shape
-	 */
-    public abstract void setColor(String newColor);
-
-    /**
-	 * Sets the fill to a new value
-	 * @param newFill - new fill boolean of the Shape
-	 */
-    public abstract void setFill(boolean newFill);
-
-    /**
-	 * Returns a boolean showing the user whether this shape is filled or not
-	 * @return boolean relating to whether or not the shape is filled
-	 */
-    public abstract boolean isFilled();
-
-
-    public abstract int equalsTo(Object other);
+	public abstract void setY(int newY);
 
     /**
 	 * Returns the string representation of the Shape
