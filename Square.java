@@ -35,7 +35,6 @@ public class Square extends StraightLineShape{
 	 */
 	public Square(int width, String color, int x, int y, boolean filled)
 	{
-		super("Square");
 		
 		this.width = width;
 	    this.color = color;

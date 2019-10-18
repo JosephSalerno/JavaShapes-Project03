@@ -34,7 +34,6 @@ public class Rectangle extends StraightLineShape{
 	 *
 	 */
 	public Rectangle(String color, int x, int y, int width, int height, boolean filled) {
-		super("Rectangle");
 		
 		this.color = color;      
 		this.x = x;      

@@ -34,7 +34,6 @@ public class Octagon extends StraightLineShape{
 	 *
 	 */
 	public Octagon(String color, int x, int y, int width, int height, boolean filled) {
-		super("Octagon");
 		this.color = color;      
 		this.x = x;      
 		this.y = y;   

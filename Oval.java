@@ -53,7 +53,7 @@ public class Oval extends RoundShape{
 	 */
 	public int getHeight()
 	{
-		return Height;
+		return height;
 	}
 	
 	/**
@@ -89,8 +89,8 @@ public class Oval extends RoundShape{
 	 */
 	public String toString() {
 	      String str = "===Oval===\n";
-	      str += "Radius (Width): " + radiusWidth + "\n";
-	      str += "Radius (Height): " + radiusHeight + "\n";
+	      str += "Radius (Width): " + radius + "\n";
+	      str += "Radius (Height): " + height + "\n";
 	      str += "Position: " + x + "," + y + "\n";
 	      str += "Color: " + color + "\n";
 	      str += "Filled: " + filled;
