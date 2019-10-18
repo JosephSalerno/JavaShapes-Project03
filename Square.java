@@ -81,33 +81,6 @@ public class Square extends StraightLineShape{
 	}
 	
 	/**
-	 * Returns the string color of the Square
-	 * @return color of the Square
-	 */
-	public String getColor()
-	{
-		return color;
-	}
-	
-	/**
-	 * Returns the x position of the Square
-	 * @return x position integer
-	 */
-	public int getX()
-	{
-		return x;
-	}
-	
-	/**
-	 * Returns the y position of the Square
-	 * @return y position integer
-	 */
-	public int getY()
-	{
-		return y;
-	}
-	
-	/**
 	 * Sets the width to a new value, calculates coords
 	 * @param newWidth - new width value of the Square
 	 */
@@ -144,24 +117,6 @@ public class Square extends StraightLineShape{
 	{
 		this.y = newY;
 		this.calculateCoords();
-	}
-
-	/**
-	 * Sets the boolean filled to true or false
-	 * @param newFill - new filled boolean of the Square
-	 */
-	public void setFill(boolean newFill)
-	{
-		this.filled = newFill;
-	}
-	
-	/**
-	 * Checks if the shape is filled
-	 * @return a boolean relating to whether or not the shape is filled
-	 */
-	public boolean isFilled()
-	{
-		return filled;
 	}
 	
 	/**
