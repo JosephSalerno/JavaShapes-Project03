@@ -22,8 +22,8 @@ public class Oval extends RoundShape{
 
 	/**
 	 * Constructor to create a Oval given a width, height, color, position x, y, and fill.
-	 * @param radiusWidth - integer radius width for the Oval
-	 * @param radiusHeight - integer radius height for the Oval
+	 * @param radius - integer radius for the Oval
+	 * @param height - integer height for the Oval
 	 * @param color - A string representing the color of the shape
 	 * @param x - the x coordinate of the shape
 	 * @param y - the y coordinate of the shape
