@@ -13,13 +13,13 @@ public class Oval extends RoundShape{
 	//class variables
 	public static final String DEFAULT_COLOR = "Black";
 	public static final int DEFAULT_POSITION = 0;
-	public static final int DEFAULT_RADIUS_W = 1;
-	public static final int DEFAULT_RADIUS_H = 2;
+	public static final int DEFAULT_RADIUS = 1;
+	public static final int DEFAULT_HEIGHT = 2;
 	public static final boolean DEFAULT_FILL = false;
 	
 	//instance variables
-	private int radiusWidth;
-	private int radiusHeight;
+	private int radius;
+	private int height;
 
 	/**
 	 * Constructor to create a Oval given a width, height, color, position x, y, and fill.
@@ -31,10 +31,10 @@ public class Oval extends RoundShape{
 	 * @param filled - boolean representing if the shape is filled or not
 	 *
 	 */
-	public Oval(int radiusWidth, int radiusHeight, String color, int x, int y, boolean filled)
+	public Oval(int radius, int height, String color, int x, int y, boolean filled)
 	{
-		this.radiusWidth = radiusWidth;
-		this.radiusHeight = radiusHeight;
+		this.radius = radius;
+		this.height = height;
 	    this.color = color;
 	    this.x = x;
 	    this.y = y;
@@ -45,17 +45,8 @@ public class Oval extends RoundShape{
 	 * Constructor to create a Oval no givens, only DEFAULTS
 	 */
 	public Oval() {
-		this(DEFAULT_RADIUS_W, DEFAULT_RADIUS_H, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION, DEFAULT_FILL);
+		this(DEFAULT_RADIUS, DEFAULT_HEIGHT, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION, DEFAULT_FILL);
 	   }
-	
-	/**
-	 * Returns the integer width of the Oval
-	 * @return width of the Oval
-	 */
-	public int getWidth()
-	{
-		return radiusWidth;
-	}
 	
 	/**
 	 * Returns the integer height of the Oval
@@ -63,16 +54,16 @@ public class Oval extends RoundShape{
 	 */
 	public int getHeight()
 	{
-		return radiusHeight;
+		return Height;
 	}
 	
 	/**
 	 * Sets width of the Oval to a new one
 	 * @param newWidth - new width of the Oval
 	 */
-	public void setWidth(int newWidth)
+	public void setRadius(int newRadius)
 	{
-		this.radiusWidth = newWidth;
+		this.radius = newRadius;
 	}
 	
 	/**
@@ -81,7 +72,7 @@ public class Oval extends RoundShape{
 	 */
 	public void setHeight(int newHeight)
 	{
-		this.radiusHeight = newHeight;
+		this.height = newHeight;
 	}
 	
 	/**
@@ -130,7 +121,7 @@ public class Oval extends RoundShape{
             		return false;
         	} else {
             		Oval o2 = (Oval) other;
-            		return (this.filled == o2.filled && this.color == o2.color && this.radiusHeight == o2.radiusHeight && this.radiusWidth == o2.radiusWidth && this.x == o2.x && this.y == o2.y);
+            		return (this.filled == o2.filled && this.color == o2.color && this.height == o2.height && this.radius == o2.radius && this.x == o2.x && this.y == o2.y);
         	}
     	}
 	      
