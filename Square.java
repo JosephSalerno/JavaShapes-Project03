@@ -91,15 +91,6 @@ public class Square extends StraightLineShape{
 	}
 	
 	/**
-	 * Sets the Square color to a new color
-	 * @param newColor - new color string of the Square
-	 */
-	public void setColor(String newColor)
-	{
-		this.color = newColor;
-	}
-	
-	/**
 	 * Sets the x position to a new value, calculates coords
 	 * @param newX - new x position of the Square
 	 */
@@ -195,11 +186,11 @@ public class Square extends StraightLineShape{
 	public boolean equalsTo(Object other) {
         	if (this == other) {
             		return true;
-        	} else if (! (other instanceof Triangle)) {
+        	} else if (! (other instanceof Square)) {
             		return false;
         	} else {
-            	Triangle t2 = (Triangle) other;
-            		return (this.filled == t2.filled && this.color == t2.color && this.x == t2.x && this.y == t2.y && this.base == t2.base && this.height == t2.height);
+            	Square s2 = (Square) other;
+            		return (this.filled == s2.filled && this.color == s2.color && this.x == s2.x && this.y == s2.y && this.width == s2.width);
         	}
     	}
 }
