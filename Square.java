@@ -29,7 +29,7 @@ public class Square extends StraightLineShape{
 	
 	
 	/**
-	 * Constructor to create a Square given a width, color, fill, and position x and y.
+	 * Constructor to create a Square given a width, color, fill, and position x and y, as well as calculates coords.
 	 * @param width - integer width for the sides of the square
 	 * @param color - A string representing the color of the shape
 	 * @param x - the x-coordinate of the shape
@@ -46,7 +46,24 @@ public class Square extends StraightLineShape{
 	    this.x = x;
 	    this.y = y;
 		this.filled = filled;
-
+		
+		this.calculateCoords();
+	}
+	
+	/**
+	 * Constructor to create a Square with no parameters, calculates coords
+	 * and just the DEFAULT values given by the program.
+	 */
+	public Square() {
+		this(DEFAULT_WIDTH, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION, DEFAULT_FILL);
+		this.calculateCoords();
+	   }
+	
+	/**
+	 * Defines xCoords and yCoords with their values based on the x,y positions and the width
+	 */
+	public void calculateCoords()
+	{
 		xCoords[0] = x;
 		xCoords[1] = x + width;
 		xCoords[2] = x + width;
@@ -57,23 +74,6 @@ public class Square extends StraightLineShape{
 		yCoords[2] = y + width;
 		yCoords[3] = y + width;
 	}
-	
-	/**
-	 * Constructor to create a Square with no parameters 
-	 * and just the DEFAULT values given by the program.
-	 */
-	public Square() {
-		this(DEFAULT_WIDTH, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION, DEFAULT_FILL);
-		xCoords[0] = DEFAULT_POSITION;
-		xCoords[1] = DEFAULT_POSITION + DEFAULT_WIDTH;
-		xCoords[2] = DEFAULT_POSITION + DEFAULT_WIDTH;
-		xCoords[3] = DEFAULT_POSITION;
-		
-		yCoords[0] = DEFAULT_POSITION;
-		yCoords[1] = DEFAULT_POSITION;
-		yCoords[2] = DEFAULT_POSITION + DEFAULT_WIDTH;
-		yCoords[3] = DEFAULT_POSITION + DEFAULT_WIDTH;
-	   }
 	
 	/**
 	 * Returns the integer width of the Square
@@ -112,12 +112,13 @@ public class Square extends StraightLineShape{
 	}
 	
 	/**
-	 * Sets the width to a new value
+	 * Sets the width to a new value, calculates coords
 	 * @param newWidth - new width value of the Square
 	 */
 	public void setWidth(int newWidth)
 	{
 		this.width = newWidth;
+		this.calculateCoords();
 	}
 	
 	/**
@@ -130,21 +131,23 @@ public class Square extends StraightLineShape{
 	}
 	
 	/**
-	 * Sets the x position to a new value
+	 * Sets the x position to a new value, calculates coords
 	 * @param newX - new x position of the Square
 	 */
 	public void setX(int newX)
 	{
 		this.x = newX;
+		this.calculateCoords();
 	}
 	
 	/**
-	 * Sets the y position to a new value
+	 * Sets the y position to a new value, calculates coords
 	 * @param newY - new y position of the Square
 	 */
 	public void setY(int newY)
 	{
 		this.y = newY;
+		this.calculateCoords();
 	}
 
 	/**
