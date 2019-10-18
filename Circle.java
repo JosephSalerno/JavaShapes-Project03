@@ -19,11 +19,6 @@ public class Circle extends RoundShape{
 	
 	//instance variables
 	private int radius;
-	private String color;
-	private int x;
-	private int y;
-	private boolean filled;
-
 	
 	/**
 	 * Constructor to create a Circle given a radius, color, position x, y, and fill.
@@ -60,48 +55,12 @@ public class Circle extends RoundShape{
 	}
 	
 	/**
-	 * Returns the string color of the Circle
-	 * @return color of the Circle
-	 */
-	public String getColor()
-	{
-		return color;
-	}
-	
-	/**
-	 * Returns the x position of the Circle
-	 * @return x position integer
-	 */
-	public int getX()
-	{
-		return x;
-	}
-	
-	/**
-	 * Returns the y position of the Circle
-	 * @return y position integer
-	 */
-	public int getY()
-	{
-		return y;
-	}
-	
-	/**
 	 * Sets the radius to a new value
 	 * @param newRadius - new radius value of the Circle
 	 */
 	public void setRadius(int newRadius)
 	{
 		this.radius = newRadius;
-	}
-	
-	/**
-	 * Sets the Circle color to a new color
-	 * @param newColor - new color string of the Circle
-	 */
-	public void setColor(String newColor)
-	{
-		this.color = newColor;
 	}
 	
 	/**
@@ -120,24 +79,6 @@ public class Circle extends RoundShape{
 	public void setY(int newY)
 	{
 		this.y = newY;
-	}
-	
-	/**
-	 * Checks if the shape is filled
-	 * @return a boolean relating to whether or not the shape is filled
-	 */
-	public boolean isFilled()
-	{
-		return filled;
-	}
-	
-	/**
-	 * Sets filled to a new value
-	 * @param newFill - new boolean value for filled
-	 */
-	public void setFill(boolean newFill)
-	{
-		this.filled = newFill;
 	}
 	
 	/**
