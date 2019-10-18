@@ -248,7 +248,7 @@ public class Rectangle extends StraightLineShape{
 	 * @return a string representing the Rectangle
 	 */
 	public String toString() {
-		String str = "===Rectangle===";
+		String str = "===Rectangle===\n";
 		str += "Height: " + height + "\n";
 		str += "Width: " + width + "\n"; 
 		str += "Coordinates: ";
@@ -260,14 +260,14 @@ public class Rectangle extends StraightLineShape{
 	      
 		str += "Position: " + x + "," + y + "\n";
 		str += "Color: " + color + "\n";
-	    str += "Filled: " + filled;
+	    str += "Filled: " + filled + "\n\n";
 	    
 	    double[] sides = getSides();
 	    for(int x = 0; x<sides.length; x++)
 	      {
 	    	  str += "Side " + (x + 1) + ": " + sides[x] + "\n";
 	      }
-	    str += "Perimeter: " + getPerimeter() + "\n";
+	    str += "Perimeter: " + getPerimeter();
 	    str += "\n==========\n";
 	    return str;
 	    
