@@ -22,15 +22,9 @@ public class Triangle extends StraightLineShape{
 	//instance variables
 	private int base;
 	private int height;
-	private String color;
-	private int x;
-	private int y;
-	private boolean filled;
 	private int[] xCoords = new int[3];
 	private int[] yCoords = new int[3];
 
-	
-	
 	/**
 	 * Constructor to create a Triangle given a base, height, color, fill, and position x and y,
 	 * additionally calculating the coordinate locations of the shape.
@@ -44,7 +38,6 @@ public class Triangle extends StraightLineShape{
 	 */
 	public Triangle (int base, int height, String color, int x, int y, boolean filled)
 	{
-		super("Triangle");
 		this.base = base;
 		this.height = height;
 	    this.color = color;
