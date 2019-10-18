@@ -74,7 +74,17 @@ public abstract class AllShapes {
     * @param Object other - a different shape object 
     * @return true/false depending on equality of shape objects
     */   
-	public abstract boolean equalsTo(Object other);
+	public abstract boolean equalsTo(Object other)
+	{
+		if(this == other)
+			return true;
+		else if(!(other.getClass() == this.getClass())
+			return false;
+		else{
+			AllShapes s = (AllShapes)other;
+			return (s.getX() == this.getX() && s.getY() == this.getY() && s.isFilled() == this.isFilled() && s.getColor().equals(this.getX()));
+		}
+	}
 	
 	/**
 	 * Sets x position of the Shape to a new one
