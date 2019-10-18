@@ -20,12 +20,12 @@ public class ShapeTester {
 		circle1.setY(3);
 		circle1.setFill(true);
 
-		Circle circle2 = new Circle(4,"red",8,10,true);
+		Circle circle2 = new Circle(5,"Blue",8,10,true);
 
 		System.out.println(circle1);
 		System.out.println(circle2);
 
-		//System.out.println("Comparing the size of shape1 to the size of shape2 (0=equal, -1=less than, 1=greater than): " + circle1.equalsTo(circle2) + "\n");
+		System.out.println("Are the circles equal? " + circle1.equalsTo(circle2) + "\n");
 
 		//Oval testing
 		Oval oval1 = new Oval();
@@ -36,12 +36,12 @@ public class ShapeTester {
 		oval1.setY(3);
 		oval1.setFill(true);
 
-		Oval oval2 = new Oval(5,2,"blue", 2,2, true);
+		Oval oval2 = new Oval(5,3,"Blue", 2,3, true);
 
 		System.out.println(oval1);
 		System.out.println(oval2);
 
-		//System.out.println("Comparing the size of shape1 to the size of shape2 (0=equal, -1=less than, 1=greater than): " + oval1.equalsTo(oval2) + "\n");
+		System.out.println("Are the ovals equals? " + oval1.equalsTo(oval2) + "\n");
 
 		//Square testing
 		Square square1 = new Square();
@@ -56,7 +56,7 @@ public class ShapeTester {
 		System.out.println(square1);
 		System.out.println(square2);
 
-		//System.out.println("Comparing the size of shape1 to the size of shape2 (0=equal, -1=less than, 1=greater than): " + square1.equalsTo(square2) + "\n");
+		System.out.println("Are the squares equal? " + square1.equalsTo(square2) + "\n");
 
 		//Rectangle testing
 		Rectangle rec1 = new Rectangle();
@@ -73,7 +73,7 @@ public class ShapeTester {
 		System.out.println(rec1);
 		System.out.println(rec2);
 
-		//System.out.println("Comparing the size of shape1 to the size of shape2 (0=equal, -1=less than, 1=greater than): " + rec1.equalsTo(rec2) + "\n");
+		System.out.println("Are the rectangles equal? " + rec1.equalsTo(rec2) + "\n");
 
 		
 		//Triangle testing
@@ -90,7 +90,7 @@ public class ShapeTester {
 		System.out.println(triangle1);
 		System.out.println(triangle2);
 
-		//System.out.println("Comparing the size of shape1 to the size of shape2 (0=equal, -1=less than, 1=greater than): " + triangle1.equalsTo(triangle2) + "\n");
+		System.out.println("Are the triangles equal? " + triangle1.equalsTo(triangle2) + "\n");
 
 		//Octagon testing
 
