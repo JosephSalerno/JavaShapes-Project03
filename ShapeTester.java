@@ -31,8 +31,8 @@ public class ShapeTester {
 			//Oval testing
 			Oval oval1 = new Oval();
 			System.out.println(oval1);
-			System.out.println("Set width to 5: " );
-			oval1.setWidth(5);
+			System.out.println("Set radius to 5: " );
+			oval1.setRadius(5);
 			System.out.println("Set height to 5: " );
 			oval1.setHeight(3);
 			System.out.println("Set color to blue: " );
