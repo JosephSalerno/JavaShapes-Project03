@@ -17,9 +17,6 @@ public class Circle extends RoundShape{
 	public static final int DEFAULT_RADIUS = 1;
 	public static final boolean DEFAULT_FILL = false;
 	
-	//instance variables
-	private int radius;
-	
 	/**
 	 * Constructor to create a Circle given a radius, color, position x, y, and fill.
 	 * @param radius - integer radius for the Circle
@@ -44,24 +41,6 @@ public class Circle extends RoundShape{
 	public Circle() {
 		this(DEFAULT_RADIUS, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION, DEFAULT_FILL);
 	   }
-	
-	/**
-	 * Returns the integer radius of the Circle
-	 * @return radius of the Circle
-	 */
-	public int getRadius()
-	{
-		return radius;
-	}
-	
-	/**
-	 * Sets the radius to a new value
-	 * @param newRadius - new radius value of the Circle
-	 */
-	public void setRadius(int newRadius)
-	{
-		this.radius = newRadius;
-	}
 	
 	/**
 	 * Sets the x position to a new value
