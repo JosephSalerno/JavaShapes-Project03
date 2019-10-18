@@ -175,24 +175,21 @@ public class Oval extends RoundShape{
 	      return str;
 	   }
 	   
-	/**
-	 * Compares this Oval to another one
-	 * @param other - Oval object for comparison
-	 * @return integer 0 if equal, -1 if less than, 1 if greater than other Oval
-	 */
-	   public int compareTo(Oval other) {
-		   //Calculate areas
-		   double oArea = this.radiusHeight * this.radiusWidth * Math.PI;
-		   double oOtherArea = other.radiusHeight * other.radiusWidth * Math.PI;
-		   
-		   if (oArea == oOtherArea) {
-		         return 0;
-		      } else if (oArea < oOtherArea) {
-		         return -1;
-		      } else {
-		         return 1;
-		      }
-	      }
+	/*
+    	* Method to test the equality of two shapes.
+    	* @param Object other - a different shape object 
+    	* @return true/false depending on equality of shape objects
+    	*/   
+   	public boolean equalsTo(Object other) {
+        	if (this == other) {
+            		return true;
+        	} else if (! (other instanceof Oval)) {
+            		return false;
+        	} else {
+            		Oval o2 = (Oval) other;
+            		return (this.filled == o2.filled && this.color == o2.color && this.radiusHeight == o2.radiusHeight && this.radiusWidth == o2.radiusWidth && this.x == o2.x && this.y == o2.y);
+        	}
+    	}
 	      
 	
 }
