@@ -11,8 +11,8 @@
 
 public abstract class StraightLineShape extends AllShapes{
 
-	protected int[] xCoords = new int[3];
-	protected int[] yCoords = new int[3];
+	protected int[] xCoords;
+	protected int[] yCoords;
 
     /**
 	 * Returns the perimeter of the Shape
