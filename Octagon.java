@@ -182,6 +182,22 @@ public class Octagon extends StraightLineShape{
 		return perimeter;
 	}
 	
+	/*
+    	* Method to test the equality of two shapes.
+    	* @param Object other - a different shape object 
+    	* @return true/false depending on equality of shape objects
+    	*/   
+    	public boolean equalsTo(Object other) {
+        	if (this == other) {
+        		return true;
+        	} else if (! (other instanceof Octagon)) {
+            		return false;
+        	} else {
+            		Octagon oc2 = (Octagon) other;
+            		return (this.filled == oc2.filled && this.color == oc2.color && this.x == oc2.x && this.y == oc2.y && this.width == oc2.width && this.height == oc2.height);
+        	}
+    	}
+	
 	/**
 	 * Returns the string representation of the Shape
 	 * @return a string representing the Shape
