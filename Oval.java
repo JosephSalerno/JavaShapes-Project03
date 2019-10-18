@@ -20,10 +20,6 @@ public class Oval extends RoundShape{
 	//instance variables
 	private int radiusWidth;
 	private int radiusHeight;
-	private String color;
-	private int x;
-	private int y;
-	boolean filled;
 
 	/**
 	 * Constructor to create a Oval given a width, height, color, position x, y, and fill.
@@ -69,33 +65,6 @@ public class Oval extends RoundShape{
 	{
 		return radiusHeight;
 	}
-
-	/**
-	 * Returns the string color of the Oval
-	 * @return color of the Oval
-	 */
-	public String getColor()
-	{
-		return color;
-	}
-	
-	/**
-	 * Returns the x position of the Oval
-	 * @return x position of the Oval
-	 */
-	public int getX()
-	{
-		return x;
-	}
-	
-	/**
-	 * Returns the y position of the Oval
-	 * @return y position of the Oval
-	 */
-	public int getY()
-	{
-		return y;
-	}
 	
 	/**
 	 * Sets width of the Oval to a new one
@@ -116,15 +85,6 @@ public class Oval extends RoundShape{
 	}
 	
 	/**
-	 * Sets color of the Oval to a new one
-	 * @param newColor - new color of the Oval
-	 */
-	public void setColor(String newColor)
-	{
-		this.color = newColor;
-	}
-	
-	/**
 	 * Sets x position of the Oval to a new one
 	 * @param newX - new x position of the Oval
 	 */
@@ -141,24 +101,7 @@ public class Oval extends RoundShape{
 	{
 		this.y = newY;
 	}
-	
-	/**
-	 * Returns a boolean showing if the shape is filled
-	 * @return boolean pertaining to whether or not the shape is filled
-	 */
-	public boolean isFilled()
-	{
-		return filled;
-	}
-	
-	/**
-	 * Sets the boolean filled to true or false
-	 * @param newFill - new filled boolean of the Shape
-	 */
-	public void setFIll(boolean newFill)
-	{
-		this.filled = newFill;
-	}
+
 	/**
 	 * Returns the string representation of the Oval
 	 * @return the Oval's string representation
