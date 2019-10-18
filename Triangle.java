@@ -84,33 +84,6 @@ public class Triangle extends StraightLineShape{
 	{
 		return height;
 	}
-
-	/**
-	 * Returns the string color of the triangle
-	 * @return color of the triangle
-	 */
-	public String getColor()
-	{
-		return color;
-	}
-	
-	/**
-	 * Returns the x position of the triangle
-	 * @return x position integer
-	 */
-	public int getX()
-	{
-		return x;
-	}
-	
-	/**
-	 * Returns the y position of the triangle
-	 * @return y position integer
-	 */
-	public int getY()
-	{
-		return y;
-	}
 	
 	/**
 	 * Sets the base to a new value, updates coords
@@ -133,15 +106,6 @@ public class Triangle extends StraightLineShape{
 	}
 	
 	/**
-	 * Sets the triangle color to a new color
-	 * @param newColor - new color string of the triangle
-	 */
-	public void setColor(String newColor)
-	{
-		this.color = newColor;
-	}
-	
-	/**
 	 * Sets the x position to a new value, updates coords
 	 * @param newX - new x position of the triangle
 	 */
@@ -159,24 +123,6 @@ public class Triangle extends StraightLineShape{
 	{
 		this.y = newY;
 		this.calculateCoords();
-	}
-
-	/**
-	 * Sets the boolean filled to true or false
-	 * @param newFill - new filled boolean of the Square
-	 */
-	public void setFill(boolean newFill)
-	{
-		this.filled = newFill;
-	}
-	
-	/**
-	 * Checks if the shape is filled
-	 * @return a boolean relating to whether or not the shape is filled
-	 */
-	public boolean isFilled()
-	{
-		return filled;
 	}
 	
 	/**
