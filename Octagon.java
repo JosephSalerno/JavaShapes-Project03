@@ -243,7 +243,7 @@ public class Octagon extends StraightLineShape{
 	 * @return a string representing the Shape
 	 */
 	public String toString() {
-		String str = "===Octagon===";
+		String str = "===Octagon===\n";
 		str += "Height: " + height + "\n";
 		str += "Width: " + width + "\n"; 
 		str += "Coordinates: ";
