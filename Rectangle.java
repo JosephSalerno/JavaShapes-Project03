@@ -21,10 +21,6 @@ public class Rectangle extends StraightLineShape{
 	private int[] yCoords = new int[4]; 
 	private int width;
 	private int height;
-	private int x;
-	private int y;
-	private boolean filled;
-	private String color;
 	
 	/**
 	 * Constructor to create a Rectangle given a width, height, color, fill, and position x and y,
@@ -77,31 +73,6 @@ public class Rectangle extends StraightLineShape{
 	}
 	
 	/**
-	 * Returns the color of the Shape
-	 * @return String of the color of the Shape
-	 */
-	public String getColor() {
-		return color;
-	}
-	
-	
-	/**
-	 * Returns the x position of the Shape
-	 * @return x position of the Shape
-	 */
-	public int getX() {
-		return x;
-	}
-	
-	/**
-	 * Returns the y position of the Shape
-	 * @return y position of the Shape
-	 */
-	public int getY() {
-		return y;
-	}
-	
-	/**
 	 * Returns the int[] of xCoords of the Shape
 	 * @return integer array containing the x coordinates
 	 */
@@ -137,16 +108,6 @@ public class Rectangle extends StraightLineShape{
 		this.calculateCoords();
 	}
 	
-	
-	/**
-	 * Sets the Rectangle color to a new color
-	 * @param newColor - new color string of the Rectangle
-	 */
-	public void setColor(String newColor) {
-		this.color = newColor;
-	}
-	
-	
 	/**
 	 * Sets the x position to a new value, update coords
 	 * @param newX - new x position of the Rectangle
@@ -165,25 +126,7 @@ public class Rectangle extends StraightLineShape{
 		this.y = newY;
 		this.calculateCoords();
 	}
-	
-	/**
-	 * Returns a boolean showing the user whether this shape is filled or not
-	 * @return boolean relating to whether or not the shape is filled
-	 */
-	public boolean isFilled() {
-		return filled;
-	}
-	
-	/**
-	 * Sets the fill to a new value
-	 * @param newFill - new fill boolean of the Rectangle
-	 */
-	public void setFill(boolean newFill)
-	{
-		this.filled = newFill;
-	}
 
-	
 	/**
 	 * Sets the coordinates in the arrays xCoords and yCoords
 	 */
