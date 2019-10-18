@@ -160,7 +160,7 @@ public class Circle extends RoundShape{
 	      str += "Color: " + color + "\n";
 	      str += "Filled: " + filled + "\n";
 	      str += "Circumference: " + getCircumference() + "\n";
-	      str += "\n============";
+	      str += "\n============\n";
 	      
 	      return str;
 	   }
