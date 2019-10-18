@@ -20,10 +20,6 @@ public class Square extends StraightLineShape{
 	
 	//instance variables
 	private int width;
-	private String color;
-	private int x;
-	private int y;
-	boolean filled;
 	private int[] xCoords = new int[4];
 	private int[] yCoords = new int[4];
 	
