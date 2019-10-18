@@ -169,8 +169,8 @@ public class Oval extends RoundShape{
 	      str += "Radius (Height): " + radiusHeight + "\n";
 	      str += "Position: " + x + "," + y + "\n";
 	      str += "Color: " + color + "\n";
-	      str += "Filled: " + filled + "\n;
-	      str += "\n==========";
+	      str += "Filled: " + filled;
+	      str += "\n==========\n";
 	      
 	      return str;
 	   }
