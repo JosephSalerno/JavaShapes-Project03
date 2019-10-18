@@ -222,26 +222,21 @@ public class Rectangle extends StraightLineShape{
 	}
 	
 	
-	/**
-	 * Compares this Rectangle to another one
-	 * @param other - Rectangle object for comparison
-	 * @return integer 0 if equal, -1 if less than, 1 if greater than other Rectangle
-	 */
-	public int compareTo(Rectangle other) {
-		//calculate area for comparison
-		  double rArea = (this.height * this.width);
-		  double rOtherArea = (other.getHeight() * other.getWidth());
-		  
-		  if (rArea == rOtherArea) {
-		         return 0;
-		      } 
-		  else if (rArea < rOtherArea) {
-		         return -1;
-		      } 
-		  else {
-		         return 1;
-		  }
-	}
+	/*
+    	* Method to test the equality of two shapes.
+    	* @param Object other - a different shape object 
+    	* @return true/false depending on equality of shape objects
+    	*/   
+    	public boolean equalsTo(Object other) {
+        	if (this == other) {
+        		return true;
+        	} else if (! (other instanceof Rectangle)) {
+            		return false;
+        	} else {
+            		Rectangle r2 = (Rectangle) other;
+            		return (this.filled == r2.filled && this.color == r2.color && this.x == r2.x && this.y == r2.y && this.width == r2.width && this.height == r2.height);
+        	}
+    	}
 	
 	/**
 	 * Returns the string representation of the Rectangle
