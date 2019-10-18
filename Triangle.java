@@ -263,25 +263,22 @@ public class Triangle extends StraightLineShape{
 	      return str;
 	   }
 	   
-	/**
-	 * Compares this Triangle to another one
-	 * @param other - Triangle object for comparison
-	 * @return integer 0 if equal, -1 if less than, 1 if greater than other Triangle
-	 */
-	public int compareTo(Triangle other) {
-		  double tArea = 0.5 * (base * height);
-		  double tOtherArea = 0.5 * (other.getBase() * other.getHeight());
-		  if (tArea == tOtherArea) {
-		         return 0;
-		      } else if (tArea < tOtherArea) {
-		         return -1;
-		      } else {
-		         return 1;
-		      }
-		      }
-	   
-	   
-	      }
+	/*
+    	* Method to test the equality of two shapes.
+    	* @param Object other - a different shape object 
+    	* @return true/false depending on equality of shape objects
+    	*/   
+	public boolean equalsTo(Object other) {
+        	if (this == other) {
+            		return true;
+        	} else if (! (other instanceof Triangle)) {
+            		return false;
+        	} else {
+            		Triangle t2 = (Triangle) other;
+            		return (this.filled == t2.filled && this.color == t2.color && this.x == t2.x && this.y == t2.y && this.base == t2.base && this.height == t2.height);
+        	}
+    	}
+}
 	      
 	
 
