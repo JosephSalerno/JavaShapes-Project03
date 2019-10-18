@@ -165,20 +165,19 @@ public class Circle extends RoundShape{
 	      return str;
 	   }
 	   
-	/**
-	 * Compares this Circle to another one
-	 * @param other - Circle object for comparison
-	 * @return integer 0 if equal, -1 if less than, 1 if greater than other Circle
-	 */
-	   public int compareTo(Circle other) {
-	      if (this.radius == other.radius) {
-	         return 0;
-	      } else if (this.radius < other.radius) {
-	         return -1;
-	      } else {
-	         return 1;
-	      }
-	      
-	
-}
+	/*
+    	* Method to test the equality of two shapes.
+    	* @param Object other - a different shape object 
+    	* @return true/false depending on equality of shape objects
+    	*/   
+    	public boolean equalsTo(Object other) {
+        	if (this == other) {
+         	   return true;
+        	} else if (! (other instanceof Circle)) {
+        	   return false;
+        	} else {
+        	   Circle c2 = (Circle) other;
+         	   return (this.radius == c2.radius && this.color == c2.color && this.filled == c2.filled && this.x == c2.x && this.y == c2.y);
+        	}
+    	}
 }
