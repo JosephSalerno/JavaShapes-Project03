@@ -1,6 +1,6 @@
 /**
- * A <code>StraightLineShape</code> abstract class that creates a shape object and
- * appropriate methods to work with each shape in Project 3.
+ * A <code>StraightLineShape</code> abstract class that creates methods
+ * to work with each straight line shape in Project 3.
  * 
  * @author JosephSalerno
  * @author BrendanOlski
@@ -9,32 +9,23 @@
  * Project: 3
  */
 
-public abstract class StraightLineShape{
+public abstract class StraightLineShape extends AllShapes{
 
-    public StraightLineShape (String id){
-        this.id = id;
-    }
-
-    public String getId(){
-        return id;
-    }
-    
-    public String toString( ){
-        return "Shape[id="+id+"]";
-    }
-
-    private String id;
-
-    public abstract String getColor();
-    public abstract int getX();
-    public abstract int getY();
-    public abstract void setX(int newX);
-    public abstract void setY(int newY);
-    public abstract void setColor(String newColor);
-    public abstract void setFill(boolean newFill);
-    public abstract boolean isFilled();
-
+    /**
+	 * Returns the perimeter of the Shape
+	 * @return the perimeter as a double
+	 */
     public abstract double getPerimeter();
+
+    /**
+	 * Returns the int[] of xCoords of the Shape
+	 * @return integer array containing the x coordinates
+	 */
     public abstract int[] getXCoordinates();
-    public abstract int[] getYCoordinates(); 
+
+    /**
+	 * Returns the int[] of yCoords of the Shape
+	 * @return integer array containing the y coordinates
+	 */
+    public abstract int[] getYCoordinates();
   }
