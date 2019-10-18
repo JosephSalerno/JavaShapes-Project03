@@ -74,11 +74,11 @@ public abstract class AllShapes {
     * @param Object other - a different shape object 
     * @return true/false depending on equality of shape objects
     */   
-	public abstract boolean equalsTo(Object other)
+	public boolean equalsTo(Object other)
 	{
 		if(this == other)
 			return true;
-		else if(!(other.getClass() == this.getClass())
+		else if(!(other.getClass() == this.getClass()))
 			return false;
 		else{
 			AllShapes s = (AllShapes)other;
