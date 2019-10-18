@@ -9,7 +9,7 @@
  * Project: 3
  */
 
-public class Square{
+public class Square extends StraightLineShape{
 	
 	
 	//class variables
@@ -23,26 +23,33 @@ public class Square{
 	private String color;
 	private int x;
 	private int y;
-	boolean filled;
-
+	private boolean filled;
+	private int[] xCoords = new int[4];
+	private int[] yCoords = new int[4];
 	
 	
 	/**
-	 * Constructor to create a Square given a width, color, fill, and position x and y.
+	 * Constructor to create a Square given a width, color, fill, and position x and y,
+	 * additionally calculating the coordinate locations of the shape
 	 * @param width - integer width for the sides of the square
 	 * @param color - A string representing the color of the shape
-	 * @param x - the x-coordinate of the shape
-	 * @param y - the y-coordinate of the shape
+	 * @param x - the x coordinate of the shape
+	 * @param y - the y coordinate of the shape
 	 * @param filled - boolean representing if the shape is filled or not
 	 *
 	 */
 	public Square(int width, String color, int x, int y, boolean filled)
 	{
+		super("Square");
+		
 		this.width = width;
 	    this.color = color;
 	    this.x = x;
 	    this.y = y;
-	    this.filled = filled;
+		this.filled = filled;
+
+		//define xCoords and yCoords
+		this.calculateCoords();
 	}
 	
 	/**
@@ -50,8 +57,27 @@ public class Square{
 	 * and just the DEFAULT values given by the program.
 	 */
 	public Square() {
-		this(DEFAULT_WIDTH, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION, DEFAULT_FILL );
+		this(DEFAULT_WIDTH, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION, DEFAULT_FILL);
+		
+		//define xCoords and yCoords
+		this.calculateCoords();
 	   }
+	
+	/**
+	 * Defines xCoords and yCoords with their values based on the x,y positions and the width
+	 */
+	public void calculateCoords()
+	{
+		xCoords[0] = x;
+		xCoords[1] = x + width;
+		xCoords[2] = x + width;
+		xCoords[3] = x;
+		
+		yCoords[0] = y;
+		yCoords[1] = y;
+		yCoords[2] = y + width;
+		yCoords[3] = y + width;
+	}
 	
 	/**
 	 * Returns the integer width of the Square
@@ -90,12 +116,13 @@ public class Square{
 	}
 	
 	/**
-	 * Sets the width to a new value
+	 * Sets the width to a new value, updates coords
 	 * @param newWidth - new width value of the Square
 	 */
 	public void setWidth(int newWidth)
 	{
 		this.width = newWidth;
+		this.calculateCoords();
 	}
 	
 	/**
@@ -108,21 +135,32 @@ public class Square{
 	}
 	
 	/**
-	 * Sets the x position to a new value
+	 * Sets the x position to a new value, updates coords
 	 * @param newX - new x position of the Square
 	 */
 	public void setX(int newX)
 	{
 		this.x = newX;
+		this.calculateCoords();
 	}
 	
 	/**
-	 * Sets the y position to a new value
+	 * Sets the y position to a new value, updates Coords
 	 * @param newY - new y position of the Square
 	 */
 	public void setY(int newY)
 	{
 		this.y = newY;
+		this.calculateCoords();
+	}
+
+	/**
+	 * Sets the boolean filled to true or false
+	 * @param newFill - new filled boolean of the Square
+	 */
+	public void setFill(boolean newFill)
+	{
+		this.filled = newFill;
 	}
 	
 	/**
@@ -135,24 +173,23 @@ public class Square{
 	}
 	
 	/**
-	 * Returns an int[] of the coordinates of the Square
-	 * @return an integer array with each coordinate (in groups of two) following one another
+	 * Returns an int[] of the x coordinates of the Square
+	 * @return an integer array with each x coordinate following one another
 	 */
-	public int[] getCoordinates()
+	public int[] getXCoordinates()
 	{
-		int[] coords = new int[8];
-		coords[0] = x;
-		coords[1] = y;
-		coords[2] = x+width;
-		coords[3] = y;
-		coords[4] = x + width;
-		coords[5] = y+width;
-		coords[6] = x;
-		coords[7] = y+width; 
-		return coords;
-		
+		return xCoords;
 	}
 	
+	/**
+	 * Returns an int[] of the y coordinates of the Square
+	 * @return an integer array with each y coordinate following one another
+	 */
+	public int[] getYCoordinates()
+	{
+		return yCoords;
+	}
+
 	/**
 	 * Returns a double[] with the sides of the Square
 	 * @return a double array with all 4 sides of the Square
@@ -166,7 +203,7 @@ public class Square{
 	
 	/**
 	 * Returns the perimeter of the Square
-	 * @return the perimeter as a integer
+	 * @return the perimeter as a double
 	 */
 	public double getPerimeter()
 	{
@@ -182,11 +219,10 @@ public class Square{
 	      str += "Width: " + width + "\n";
 	      str += "Coordinates: ";
 	      
-//	      int[] coords = getCoordinates();
-//	      for(int x = 0; x<coords.length; x+=2)
-//	      {
-//	    	  str+= "(" + coords[x] + "," + coords[x+1] + "), ";
-//	      }
+	      for(int index = 0; index<xCoords.length; ++index)
+	      {
+	    	str+= "(" + xCoords[index] + "," + yCoords[index] + "), ";
+	      }
 	      
 	      str += "\nPosition: " + x + "," + y + "\n";
 	      str += "Color: " + color + "\n";
@@ -199,7 +235,7 @@ public class Square{
 	      }
 	      
 	      str += "Perimeter: " + getPerimeter() + "\n";
-	      str += "\n==========";
+	      str += "==========\n\n";
 	      
 	      return str;
 	   }

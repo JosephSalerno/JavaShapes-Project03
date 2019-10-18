@@ -8,10 +8,10 @@
  * Project: 3
  */
 
-public class Circle{
+public class Circle extends RoundShape{
 	
 	
-	//class variable
+	//class variables
 	public static final String DEFAULT_COLOR = "Black";
 	public static final int DEFAULT_POSITION = 0;
 	public static final int DEFAULT_RADIUS = 1;
@@ -22,15 +22,15 @@ public class Circle{
 	private String color;
 	private int x;
 	private int y;
-	boolean filled;
+	private boolean filled;
 
 	
 	/**
 	 * Constructor to create a Circle given a radius, color, position x, y, and fill.
 	 * @param radius - integer radius for the Circle
 	 * @param color - A string representing the color of the shape
-	 * @param x - the x-coordinate of the shape
-	 * @param y - the y-coordinate of the shape
+	 * @param x - the x coordinate of the shape
+	 * @param y - the y coordinate of the shape
 	 * @param filled - boolean representing if the shape is filled or not
 	 *
 	 */
@@ -115,7 +115,7 @@ public class Circle{
 	
 	/**
 	 * Sets the y position to a new value
-	 * @param newY - new y position of the Square
+	 * @param newY - new y position of the Circle
 	 */
 	public void setY(int newY)
 	{
@@ -132,7 +132,16 @@ public class Circle{
 	}
 	
 	/**
-	 * Returns the circumference of the circle
+	 * Sets filled to a new value
+	 * @param newFill - new boolean value for filled
+	 */
+	public void setFill(boolean newFill)
+	{
+		this.filled = newFill;
+	}
+	
+	/**
+	 * Returns the circumference of the Circle
 	 * @return double containing the circumference
 	 */
 	public double getCircumference()
@@ -142,7 +151,7 @@ public class Circle{
 	
 	/**
 	 * Returns a string representation of the Circle
-	 * @return a string containing the circle string representation
+	 * @return a string containing the Circle string representation
 	 */
 	public String toString() {
 	      String str = "===Circle===";
