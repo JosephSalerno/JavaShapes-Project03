@@ -17,8 +17,8 @@ public class Rectangle extends StraightLineShape{
 	public static final boolean DEFAULT_FILL = false;
 	
 	//instance variables
-	private int[] xCoords;
-	private int[] yCoords; 
+	private int[] xCoords = new int[4];
+	private int[] yCoords = new int[4]; 
 	private int width;
 	private int height;
 	private int x;
@@ -29,8 +29,8 @@ public class Rectangle extends StraightLineShape{
 	/**
 	 * Constructor to create a Rectangle given a width, height, color, fill, and position x and y,
 	 * additionally calculating the coordinate locations of the shape.
-	 * @param width - integer width for the sides of the square
-	 * @param height - integer height for the sides of the square
+	 * @param width - integer width for the sides of the shape
+	 * @param height - integer height for the sides of the shape
 	 * @param color - A string representing the color of the shape
 	 * @param x - the x coordinate of the shape
 	 * @param y - the y coordinate of the shape
