@@ -18,7 +18,6 @@ public class Oval extends RoundShape{
 	public static final boolean DEFAULT_FILL = false;
 	
 	//instance variables
-	private int radius;
 	private int height;
 
 	/**
@@ -55,15 +54,6 @@ public class Oval extends RoundShape{
 	public int getHeight()
 	{
 		return Height;
-	}
-	
-	/**
-	 * Sets width of the Oval to a new one
-	 * @param newWidth - new width of the Oval
-	 */
-	public void setRadius(int newRadius)
-	{
-		this.radius = newRadius;
 	}
 	
 	/**
