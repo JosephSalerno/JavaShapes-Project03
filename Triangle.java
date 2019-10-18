@@ -25,14 +25,15 @@ public class Triangle extends StraightLineShape{
 	private String color;
 	private int x;
 	private int y;
-	boolean filled;
+	private boolean filled;
 	private int[] xCoords = new int[3];
 	private int[] yCoords = new int[3];
 
 	
 	
 	/**
-	 * Constructor to create a Triangle given a base, height, color, fill, and position x and y.
+	 * Constructor to create a Triangle given a base, height, color, fill, and position x and y,
+	 * additionally calculating the coordinate locations of the shape.
 	 * @param base - integer length for the bottom side of the triangle
 	 * @param height - integer height of the triangle
 	 * @param color - A string representing the color of the shape
@@ -50,6 +51,8 @@ public class Triangle extends StraightLineShape{
 	    this.x = x;
 	    this.y = y;
 	    this.filled = filled;
+	    
+	    this.calculateCoords();
 	}
 	
 	/**
@@ -58,8 +61,19 @@ public class Triangle extends StraightLineShape{
 	 */
 	public Triangle() {
 		this(DEFAULT_BASE, DEFAULT_HEIGHT, DEFAULT_COLOR, DEFAULT_POSITION, DEFAULT_POSITION, DEFAULT_FILL );
+		this.calculateCoords();
 	   }
 	
+	public void calculateCoords()
+	{
+		xCoords[0] = (base/2)+x;
+		xCoords[1] = (base+x);
+		xCoords[2] = x;
+		
+		yCoords[0] = y;
+		yCoords[1] = yCoords[2] = (height+y);
+		
+	}
 	/**
 	 * Returns the integer base of the triangle
 	 * @return base of the triangle
@@ -106,21 +120,23 @@ public class Triangle extends StraightLineShape{
 	}
 	
 	/**
-	 * Sets the base to a new value
+	 * Sets the base to a new value, updates coords
 	 * @param newBase - new base value of the triangle
 	 */
 	public void setBase(int newBase)
 	{
 		this.base = newBase;
+		this.calculateCoords();
 	}
 	
 	/**
-	 * Sets the height to a new value
+	 * Sets the height to a new value, updates coords
 	 * @param newHeight - new height value of the triangle
 	 */
 	public void setHeight(int newHeight)
 	{
 		this.height = newHeight;
+		this.calculateCoords();
 	}
 	
 	/**
@@ -133,21 +149,23 @@ public class Triangle extends StraightLineShape{
 	}
 	
 	/**
-	 * Sets the x position to a new value
+	 * Sets the x position to a new value, updates coords
 	 * @param newX - new x position of the triangle
 	 */
 	public void setX(int newX)
 	{
 		this.x = newX;
+		this.calculateCoords();
 	}
 	
 	/**
-	 * Sets the y position to a new value
+	 * Sets the y position to a new value, updates coords
 	 * @param newY - new y position of the triangle
 	 */
 	public void setY(int newY)
 	{
 		this.y = newY;
+		this.calculateCoords();
 	}
 
 	/**
@@ -169,26 +187,21 @@ public class Triangle extends StraightLineShape{
 	}
 	
 	/**
-	 * Returns an int[] of the x-coordinates of the triangle
-	 * @return an integer array with x-coordinates
+	 * Returns an int[] of the x coordinates of the triangle
+	 * @return an integer array with x coordinates
 	 */
 	public int[] getXCoordinates()
 	{
-		xCoords[0] = (base/2)+x;
-		xCoords[1] = (base+x);
-		xCoords[2] = x;
 		return xCoords;
 		
 	}
 	
 	/**
-	 * Returns an int[] of the y-coordinates of the triangle
-	 * @return an integer array with each y-coordinate 
+	 * Returns an int[] of the y coordinates of the triangle
+	 * @return an integer array with each y coordinate 
 	 */
 	public int[] getYCoordinates()
 	{
-		yCoords[0] = y;
-		yCoords[1] = yCoords[2] = (height+y);
 		return yCoords;
 	}
 
@@ -229,9 +242,7 @@ public class Triangle extends StraightLineShape{
 	      str += "Base width: " + base + "\n";
 	      str += "Height: " + height + "\n";
 	      str += "Coordinates: ";
-	      
-		  int[] xCoords = getXCoordinates();
-		  int[] yCoords = getYCoordinates();
+
 	      for(int index = 0; index<xCoords.length; ++index)
 	      {
 	    	  str+= "(" + xCoords[index] + "," + yCoords[index] + "), ";

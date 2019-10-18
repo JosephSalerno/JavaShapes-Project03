@@ -30,20 +30,19 @@ public class Oval extends RoundShape{
 	 * @param radiusWidth - integer radius width for the Oval
 	 * @param radiusHeight - integer radius height for the Oval
 	 * @param color - A string representing the color of the shape
-	 * @param x - the x-coordinate of the shape
-	 * @param y - the y-coordinate of the shape
+	 * @param x - the x coordinate of the shape
+	 * @param y - the y coordinate of the shape
 	 * @param filled - boolean representing if the shape is filled or not
 	 *
 	 */
 	public Oval(int radiusWidth, int radiusHeight, String color, int x, int y, boolean filled)
 	{
-		super("Oval");
 		this.radiusWidth = radiusWidth;
 		this.radiusHeight = radiusHeight;
 	    this.color = color;
 	    this.x = x;
-		this.y = y;
-		this.filled = filled;
+	    this.y = y;
+	    this.filled = filled;
 	}
 	
 	/**
@@ -151,28 +150,27 @@ public class Oval extends RoundShape{
 	{
 		return filled;
 	}
-
+	
 	/**
 	 * Sets the boolean filled to true or false
-	 * @param newFill - new filled boolean of the Square
+	 * @param newFill - new filled boolean of the Shape
 	 */
-	public void setFill(boolean newFill)
+	public void setFIll(boolean newFill)
 	{
 		this.filled = newFill;
 	}
-	
 	/**
 	 * Returns the string representation of the Oval
 	 * @return the Oval's string representation
 	 */
 	public String toString() {
-	      String str = "===Oval===\n";
+	      String str = "===Oval===";
 	      str += "Radius (Width): " + radiusWidth + "\n";
 	      str += "Radius (Height): " + radiusHeight + "\n";
 	      str += "Position: " + x + "," + y + "\n";
 	      str += "Color: " + color + "\n";
 	      str += "Filled: " + filled;
-	      str += "\n==========\n";
+	      str += "\n==========";
 	      
 	      return str;
 	   }

@@ -22,22 +22,20 @@ public class Circle extends RoundShape{
 	private String color;
 	private int x;
 	private int y;
-	boolean filled;
+	private boolean filled;
 
 	
 	/**
 	 * Constructor to create a Circle given a radius, color, position x, y, and fill.
 	 * @param radius - integer radius for the Circle
 	 * @param color - A string representing the color of the shape
-	 * @param x - the x-coordinate of the shape
-	 * @param y - the y-coordinate of the shape
+	 * @param x - the x coordinate of the shape
+	 * @param y - the y coordinate of the shape
 	 * @param filled - boolean representing if the shape is filled or not
 	 *
 	 */
 	public Circle(int radius, String color, int x, int y, boolean filled)
 	{
-		super("Circle");
-		
 		this.radius = radius;
 	    this.color = color;
 	    this.x = x;
@@ -123,15 +121,6 @@ public class Circle extends RoundShape{
 	{
 		this.y = newY;
 	}
-
-	/**
-	 * Sets the boolean filled to true or false
-	 * @param newFill - new filled boolean of the Square
-	 */
-	public void setFill(boolean newFill)
-	{
-		this.filled = newFill;
-	}
 	
 	/**
 	 * Checks if the shape is filled
@@ -140,6 +129,15 @@ public class Circle extends RoundShape{
 	public boolean isFilled()
 	{
 		return filled;
+	}
+	
+	/**
+	 * Sets filled to a new value
+	 * @param newFill - new boolean value for filled
+	 */
+	public void setFill(boolean newFill)
+	{
+		this.filled = newFill;
 	}
 	
 	/**
@@ -156,13 +154,13 @@ public class Circle extends RoundShape{
 	 * @return a string containing the Circle string representation
 	 */
 	public String toString() {
-	      String str = "===Circle===" + "\n";
+	      String str = "===Circle===";
 	      str += "Radius: " + radius + "\n";
 	      str += "Position: " + x + "," + y + "\n";
 	      str += "Color: " + color + "\n";
 	      str += "Filled: " + filled + "\n";
 	      str += "Circumference: " + getCircumference() + "\n";
-	      str += "============\n";
+	      str += "\n============";
 	      
 	      return str;
 	   }
