@@ -154,7 +154,7 @@ public class Circle extends RoundShape{
 	 * @return a string containing the Circle string representation
 	 */
 	public String toString() {
-	      String str = "===Circle===";
+	      String str = "===Circle===\n";
 	      str += "Radius: " + radius + "\n";
 	      str += "Position: " + x + "," + y + "\n";
 	      str += "Color: " + color + "\n";
