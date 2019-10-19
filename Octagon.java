@@ -212,16 +212,16 @@ public class Octagon extends StraightLineShape{
 	    	  str+= "(" + xCoords[index] + "," + yCoords[index] + "), ";
 	      }
 	      
-		str += "Position: " + x + "," + y + "\n";
+		str += "\nPosition: " + x + "," + y + "\n";
 		str += "Color: " + color + "\n";
-	    str += "Filled: " + filled;
+	    str += "Filled: " + filled + "\n";
 	    
 	    double[] sides = getSides();
 	    for(int x = 0; x<sides.length; x++)
 	      {
 	    	  str += "Side " + (x + 1) + ": " + sides[x] + "\n";
 	      }
-	    str += "Perimeter: " + getPerimeter() + "\n";
+	    str += "\nPerimeter: " + getPerimeter() + "\n";
 	    str += "\n==========\n";
 	    return str;
 	    
