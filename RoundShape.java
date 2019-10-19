@@ -13,8 +13,8 @@ public abstract class RoundShape extends AllShapes{
   	protected int radius;
 
          /**
-	 * Returns the integer width of the Oval
-	 * @return width of the Oval
+	 * Returns the integer width of the Shape
+	 * @return width of the Shape
 	 */
 	public int getRadius()
 	{
@@ -22,8 +22,8 @@ public abstract class RoundShape extends AllShapes{
 	}
 	
 	/**
-	 * Sets width of the Oval to a new one
-	 * @param newWidth - new width of the Oval
+	 * Sets radius of the Shape to a new one
+	 * @param newRadius - new radius of the Shape
 	 */
 	public void setRadius(int newRadius)
 	{
