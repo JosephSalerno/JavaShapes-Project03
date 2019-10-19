@@ -157,7 +157,7 @@ public class ShapeTester {
 			
 			System.out.println(oct2);
 
-			System.out.println("Are the rectangles equal? " + oct1.equalsTo(oct2) + "\n");
+			System.out.println("Are the octagons equal? " + oct1.equalsTo(oct2) + "\n");
 
 
 		}
